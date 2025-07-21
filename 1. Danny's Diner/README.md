@@ -14,7 +14,8 @@ The process began with creating the tables within MySQL and exploring the data w
 
 **1. What is the total amount each customer spent at the restaurant?**
 
-```
+#### SQL Query
+```SQL
 SELECT
 customer_id,
 SUM(menu.product_price) as total_customer_spend
@@ -23,3 +24,9 @@ JOIN menu
 ON menu.product_id = sales.product_id
 GROUP BY customer_id;
 ```
+#### Results
+| customer_id | total_customer_spend
+| --- | --- |
+| A | 76 |
+| B | 74 |
+| C | 36 |
