@@ -15,7 +15,7 @@ The process began with creating the tables within MySQL and exploring the data w
 **1. What is the total amount each customer spent at the restaurant?**
 
 #### SQL Query
-```SQL
+```sql
 SELECT
 customer_id,
 SUM(menu.product_price) as total_customer_spend
