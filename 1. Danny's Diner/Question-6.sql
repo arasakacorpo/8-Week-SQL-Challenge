@@ -19,7 +19,7 @@ order_date,
 product_id,
 product_name
 FROM
-sales_by_members
+before_sales_by_members
 LEFT JOIN menu 
 USING(product_id)
 WHERE order_seq = 1;
