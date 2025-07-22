@@ -23,7 +23,7 @@ JOIN menu
 ON menu.product_id = sales.product_id
 GROUP BY customer_id;
 ```
-#### Results
+#### Results:
 | customer_id | total_customer_spend
 | --- | --- |
 | A | 76 |
@@ -42,7 +42,7 @@ FROM sales
 GROUP BY customer_id;
 ```
 
-#### Results
+#### Results:
 | customer_id | num_orders |
 | --- | --- |
 | A | 6 |
@@ -73,7 +73,7 @@ ON customer_order_seq.product_id = m.product_id
 WHERE order_seq = 1;
 ```
 
-#### Results
+#### Results:
 | customer_id | order_date | product_name |
 | --- | --- | --- |
 | A | 2021-01-01 | sushi |
@@ -107,7 +107,7 @@ menu
 USING(product_id);
 ```
 
-#### Results
+#### Results:
 | product_name | times_sold |
 | --- | --- |
 | ramen | 8 |
@@ -116,7 +116,7 @@ USING(product_id);
 
 **5. Which item was the most popular for each customer?**
 
-'''sql
+```sql
 WITH sales_cte AS (
 SELECT
 customer_id,
@@ -143,9 +143,9 @@ sales_ranked
 JOIN menu
 ON sales_ranked.product_id = menu.product_id
 WHERE rank_fav = 1;
-'''
+```
 
-#### Results
+#### Results:
 | customer_id | product_name | total_ordered |
 | --- | --- | --- |
 | B | sushi | 2 |
@@ -186,7 +186,7 @@ USING(product_id)
 WHERE order_seq = 1;
 ```
 
-#### Results
+#### Results:
 | customer_id | order_date | product_id | product_name |
 | --- | --- | --- | --- |
 | A | 2021-01-07 | 2 | curry |
@@ -224,7 +224,7 @@ USING(product_id)
 WHERE order_seq = 1;
 ```
 
-#### Results
+#### Results:
 | customer_id | order_date | product_id | product_name |
 | --- | --- | --- | --- |
 | A | 2021-01-01 | 1 | sushi |
@@ -264,7 +264,7 @@ GROUP BY customer_id;
 ```
 
 
-#### Results
+#### Results:
 | customer_id | COUNT(product_id) | SUM(product_price) |
 | --- | --- | --- |
 | B | 3 | 40 |
@@ -299,8 +299,9 @@ GROUP BY customer_id;
 ```
 
 
-#### Results
+#### Results:
 | customer_id | SUM(points_earned) |
+| --- | --- |
 | A | 860 |
 | B | 940 |
 | C | 360 |
@@ -342,7 +343,7 @@ orders_by_members
 GROUP BY customer_id;
 ```
 
-#### Results
+#### Results:
 | customer_id | SUM(points_earned) |
 | --- | --- |
 | A | 860 |
