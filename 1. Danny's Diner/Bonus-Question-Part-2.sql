@@ -16,6 +16,11 @@ WITH all_things AS (
     USING(customer_id)
 )
 
-SELECT * ,
+SELECT 
+customer_id,
+order_date,
+product_name,
+price,
+member,
 CASE WHEN member = 'Y' THEN RANK() OVER (PARTITION BY customer_id, member ORDER BY order_date ASC)ELSE NULL END AS ranking
 FROM all_things;
