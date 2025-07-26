@@ -12,7 +12,7 @@ WITH all_things AS (
     sales
     JOIN menu
     USING(product_id)
-    JOIN members
+    LEFT JOIN members
     USING(customer_id)
 )
 
